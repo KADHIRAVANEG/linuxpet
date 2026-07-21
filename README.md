@@ -220,7 +220,6 @@ graph TD
 ## 🤖 Pet State Machine
 
 ```mermaid
-stateDiagram-v2
     stateDiagram-v2
     [*] --> Idle : launch
 
