@@ -346,6 +346,99 @@ linuxpet/
 └── README.md
 ```
 
+## Chart 
+
+```mermaid
+graph TD
+    %% Styling
+    classDef folder fill:#2374ab,stroke:#1d6391,stroke-width:2px,color:#fff;
+    classDef file fill:#f7f7f7,stroke:#ccc,stroke-width:1px,color:#333;
+    
+    %% Root
+    root[linuxpet/]:::folder
+
+    %% Level 1
+    src[src/]:::folder
+    assets[assets/]:::folder
+    plugins[plugins/]:::folder
+    docs[docs/]:::folder
+    packaging[packaging/]:::folder
+    github[.github/]:::folder
+    cargo[Cargo.toml]:::file
+    contrib[CONTRIBUTING.md]:::file
+    changelog[CHANGELOG.md]:::file
+    readme[README.md]:::file
+
+    root --> src
+    root --> assets
+    root --> plugins
+    root --> docs
+    root --> packaging
+    root --> github
+    root --> cargo
+    root --> contrib
+    root --> changelog
+    root --> readme
+
+    %% Src Subtree
+    main[main.rs<br/><i>CLI & Entry</i>]:::file
+    renderer[renderer.rs<br/><i>winit/softbuffer</i>]:::file
+    font[font.rs<br/><i>fontdue bitmap</i>]:::file
+    config[config.rs<br/><i>serde config.toml</i>]:::file
+    stats[stats.rs<br/><i>sysinfo polling</i>]:::file
+    plugin[plugin.rs<br/><i>hot-reload watcher</i>]:::file
+    pet_dir[pet/]:::folder
+
+    src --> main
+    src --> renderer
+    src --> font
+    src --> config
+    src --> stats
+    src --> plugin
+    src --> pet_dir
+
+    %% Pet Subtree
+    pet_mod[mod.rs<br/><i>Pet Trait & SM</i>]:::file
+    pet_cat[cat.rs<br/><i>Cat behavior</i>]:::file
+    pet_dog[dog.rs<br/><i>Dog behavior</i>]:::file
+    pet_fish[fish.rs<br/><i>Fish behavior</i>]:::file
+
+    pet_dir --> pet_mod
+    pet_dir --> pet_cat
+    pet_dir --> pet_dog
+    pet_dir --> pet_fish
+
+    %% Assets Subtree
+    a_cat[cat/]:::folder
+    a_dog[dog/]:::folder
+    a_fish[fish/]:::folder
+
+    assets --> a_cat
+    assets --> a_dog
+    assets --> a_fish
+
+    %% Plugins Subtree
+    p_fox[foxgirl/]:::folder
+    p_man[manifest.toml]:::file
+    
+    plugins --> p_fox
+    p_fox --> p_man
+
+    %% Docs Subtree
+    d_spec[plugin-spec.md]:::file
+    docs --> d_spec
+
+    %% Packaging Subtree
+    pkg_aur[aur/]:::folder
+    pkg_flat[flatpak/]:::folder
+    packaging --> pkg_aur
+    packaging --> pkg_flat
+
+    %% Github Subtree
+    gh_wf[workflows/]:::folder
+    github --> gh_wf
+```
+
 ---
 
 ## 🛠️ Tech Stack
