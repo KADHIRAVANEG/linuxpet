@@ -127,12 +127,12 @@ factor = 1.0
 When enabled, a small semi-transparent panel floats next to your pet showing:
 
 ```
-╭──────────────────────────────╮
-│ CPU  ▁▂▄▆▇▅▃▂▁▂▄▅▆▇▆▅  42% │
+╭───────────────────────────────────╮
+│ CPU  ▁▂▄▆▇▅▃▂▁▂▄▅▆▇▆▅  42%        │
 │ RAM  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  6.1 / 8 GB │
-│ NET  ↓ 1.2 MB/s  ↑ 0.3 MB/s │
-│ DISK ░░░░░░░░░░░░░  idle    │
-╰──────────────────────────────╯
+│ NET  ↓ 1.2 MB/s  ↑ 0.3 MB/s       │
+│ DISK ░░░░░░░░░░░░░  idle          │
+╰───────────────────────────────────╯
 ```
 
 Sparklines show the last 60 seconds of history. When CPU exceeds the alert threshold your pet will switch to a panic animation until load drops.
@@ -221,6 +221,7 @@ graph TD
 
 ```mermaid
 stateDiagram-v2
+    stateDiagram-v2
     [*] --> Idle : launch
 
     Idle --> Walk    : random (5%/s)
