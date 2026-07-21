@@ -1,6 +1,56 @@
 [package]
+name        = "linuxpet"
+version     = "0.1.0"
+edition     = "2021"
+description = "Multi-pet Linux desktop companion with system stats HUD"
+license     = "MIT"
+repository  = "https://github.com/KADHIRAVANEG/linuxpet"
+keywords    = ["desktop", "pet", "linux", "overlay", "rust"]
+categories  = ["graphics", "os::linux-apis"]
+
+[[bin]]
 name = "linuxpet"
-version = "0.1.0"
-edition = "2024"
+path = "src/main.rs"
 
 [dependencies]
+# Windowing + input
+winit       = { version = "0.30", features = ["rwh_06"] }
+softbuffer  = "0.4"
+
+# 2D rendering
+tiny-skia   = "0.11"
+
+# Font rendering (embedded, no system font needed)
+fontdue     = "0.9"
+
+# Image / GIF decoding
+image       = { version = "0.25", default-features = false, features = ["gif", "png"] }
+
+# System stats
+sysinfo     = "0.30"
+
+# Config (TOML + serde)
+serde       = { version = "1", features = ["derive"] }
+toml        = "0.8"
+
+# CLI argument parsing
+clap        = { version = "4", features = ["derive"] }
+
+# File watching (plugin hot-reload)
+notify      = "6"
+
+# Logging
+log         = "0.4"
+env_logger  = "0.11"
+
+# Error handling
+anyhow      = "1"
+
+# Cross-platform directories (~/.config, ~/.local/share)
+dirs        = "5"
+
+[profile.release]
+opt-level   = 3
+lto         = true
+codegen-units = 1
+strip       = true
