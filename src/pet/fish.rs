@@ -30,6 +30,7 @@ impl Fish {
 
     /// Returns the (dx, dy) drift offset from the anchor position.
     /// Renderer adds this to the base window position each frame.
+    #[allow(dead_code)]
     pub fn drift(&self) -> (f32, f32) {
         let dx = (self.t * 0.5).sin() * 40.0;  // ±40px horizontal
         let dy = (self.t * 0.8).sin() * 10.0;  // ±10px vertical bob

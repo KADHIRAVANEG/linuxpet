@@ -77,6 +77,7 @@ impl BitmapFont {
     }
 
     /// Measure the pixel width of a string at the given size.
+    #[allow(dead_code)]
     pub fn measure_width(&self, text: &str, px: f32) -> f32 {
         text.chars()
             .map(|ch| self.font.rasterize(ch, px).0.advance_width)

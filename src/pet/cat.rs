@@ -24,6 +24,7 @@ pub struct Cat {
     walk_direction:  f32,
     walk_loops_done: u32,
     /// How many full walk loops before returning to Idle
+    #[allow(dead_code)]
     max_walk_loops:  u32,
 }
 

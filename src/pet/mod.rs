@@ -54,6 +54,7 @@ pub struct RgbaFrame {
 
 // ─── Pet trait ────────────────────────────────────────────────────────────────
 
+#[allow(dead_code)]
 pub trait Pet: Send {
     fn name(&self) -> &str;
     fn kind(&self) -> PetKind;
