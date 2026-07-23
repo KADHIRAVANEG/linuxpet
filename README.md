@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/petss.png" alt="LinuxPet" width="120"/>
+<img src="images/petss.png" alt="LinuxPet" width="200"/>
 
 # 🐾 LinuxPet
 
